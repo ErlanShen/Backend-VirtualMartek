@@ -58,10 +58,11 @@ public class ProductResourceTest {
 	@Test
 	public void editProductTest() {
 		this.categorieDTo.setId(2);
-		this.productDto.setName("saco");
-		this.productDto.setDescription("saco de marvel");
-		this.productDto.setPrice(50.00);
-		this.productDto.setStock(15);
+		this.productDto.setId(1);
+		this.productDto.setName("Calzones 2X1");
+		this.productDto.setDescription("Calzon de marvel");
+		this.productDto.setPrice(20.00);
+		this.productDto.setStock(100);
 		this.productDto.setCategorie(categorieDTo);
 		restService.restBuilder().path(ProductResource.PRODUCT)
 		.path(ProductResource.ID).expand(1).body(productDto).put().build();	
