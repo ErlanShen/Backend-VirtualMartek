@@ -30,7 +30,7 @@ public class ProductResource {
 	
 	@PostMapping
 	public void createProduct(@Valid @RequestBody ProductDto productDto )throws ProductCreateError{
-		if(this.productController.createProduct(productDto) =="created") throw new ProductCreateError();
+		if(this.productController.createProduct(productDto) !="created") throw new ProductCreateError();
 		
 	}
 	@GetMapping

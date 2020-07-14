@@ -24,7 +24,7 @@ public class Product {
 	private String description;
 	private double price;
 	
-	@ManyToOne(optional = false,cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@ManyToOne(optional = false,cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private Categorie categorie;
 	
 	@Lob

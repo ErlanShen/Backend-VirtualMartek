@@ -26,7 +26,7 @@ public class CategorieResourceTest {
 	
 	@Before
 	public void Before() {
-		this.categorieDTo = new CategorieDTo(1, "color");
+		this.categorieDTo = new CategorieDTo(2, "color");
 	
 	}
 	@Test

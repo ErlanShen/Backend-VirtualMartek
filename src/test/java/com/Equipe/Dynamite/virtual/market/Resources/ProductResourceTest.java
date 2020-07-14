@@ -31,7 +31,11 @@ public class ProductResourceTest {
 	@Before
 	public void before() {
 		this.categorieDTo = new CategorieDTo(1, "color");
-		this.productDto= new ProductDto(1, 50, "name", "description", 50 , this.categorieDTo, null);
+		byte[] image= new byte[3];
+		image[0]=0;
+		image[1]=0;
+		image[2]=0;
+		this.productDto= new ProductDto(1, 50, "name", "description", 50 , this.categorieDTo, image);
 	}
 	
 	@Test
@@ -53,12 +57,12 @@ public class ProductResourceTest {
 	
 	@Test
 	public void editProductTest() {
+		this.categorieDTo.setId(2);
 		this.productDto.setName("saco");
 		this.productDto.setDescription("saco de marvel");
 		this.productDto.setPrice(50.00);
 		this.productDto.setStock(15);
-		this.productDto.setCategorie(null);
-		this.productDto.setImage(null);
+		this.productDto.setCategorie(categorieDTo);
 		restService.restBuilder().path(ProductResource.PRODUCT)
 		.path(ProductResource.ID).expand(1).body(productDto).put().build();	
 	}
