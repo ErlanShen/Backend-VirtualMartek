@@ -18,7 +18,6 @@ import com.Equipe.Dynamite.virtual.market.controllers.CategorieController;
 import com.Equipe.Dynamite.virtual.market.dtos.CategorieDTo;
 import com.Equipe.Dynamite.virtual.market.resources.exceptions.CategorieCreateError;
 import com.Equipe.Dynamite.virtual.market.resources.exceptions.CategorieDontFound;
-import com.Equipe.Dynamite.virtual.market.resources.exceptions.ProductDontFound;
 
 @RestController
 @RequestMapping(CategorieResource.CATEGORIE)

@@ -4,12 +4,11 @@ import com.Equipe.Dynamite.virtual.market.entities.Product;
 
 public class ProductDto {
 private int id, stock;
-private String name,description;
+private String name,description,image;
 private double price;
 private CategorieDTo categorie;
-private byte[] image;
 
-public ProductDto(int id, int stock, String name, String description, double price,CategorieDTo categorie, byte[] image) {
+public ProductDto(int id, int stock, String name, String description, double price,CategorieDTo categorie, String image) {
 	super();
 	this.id = id;
 	this.stock = stock;
@@ -65,10 +64,10 @@ public CategorieDTo getCategorie() {
 public void setCategorie(CategorieDTo categorie) {
 	this.categorie = categorie;
 }
-public byte[] getImage() {
+public String getImage() {
 	return image;
 }
-public void setImage(byte[] image) {
+public void setImage(String image) {
 	this.image = image;
 }
 

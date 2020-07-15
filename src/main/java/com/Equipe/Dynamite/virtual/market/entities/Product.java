@@ -7,7 +7,6 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 
 @Entity
@@ -21,18 +20,17 @@ public class Product {
 	
 	@Column(length = 50)
 	private String name;
-	private String description;
+	
+	private String description,image;
 	private double price;
 	
 	@ManyToOne(optional = false,cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private Categorie categorie;
 	
-	@Lob
-	private byte[] image;
 	public Product() {
 	}
 	public Product(int id, int stock, String name, String description, double price, Categorie categorie,
-			byte[] image) {
+			String image) {
 		super();
 		this.id = id;
 		this.stock = stock;
@@ -42,7 +40,7 @@ public class Product {
 		this.categorie = categorie;
 		this.image = image;
 	}
-	public Product(byte[] image) {
+	public Product(String image) {
 		super();
 		this.image = image;
 	}
@@ -96,11 +94,11 @@ public class Product {
 		this.categorie = categorie;
 	}
 
-	public byte[] getImage() {
+	public String getImage() {
 		return image;
 	}
 
-	public void setImage(byte[] image) {
+	public void setImage(String image) {
 		this.image = image;
 	}
 
